@@ -9,17 +9,17 @@ class Hat < Formula
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/Izzxt/hat/releases/download/v0.1.0/hat_0.1.0_darwin_x86_64.tar.gz"
-      sha256 "14fb6f33fa1f9e0e94fa35371bf6ec6d00ba99e4301e84fe14bc1364584f07d4"
+    if Hardware::CPU.arm?
+      url "https://github.com/Izzxt/hat/releases/download/v0.1.0/hat_0.1.0_darwin_arm64.tar.gz"
+      sha256 "d687a0182a6544823f742a4bc5b14a02c6ed8c09f26616ed7a589e512079118a"
 
       def install
         bin.install "hat"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/Izzxt/hat/releases/download/v0.1.0/hat_0.1.0_darwin_arm64.tar.gz"
-      sha256 "a056449fdef7c9ee32e43e366fab096739fdf68dde01695bf63a07ce404b5222"
+    if Hardware::CPU.intel?
+      url "https://github.com/Izzxt/hat/releases/download/v0.1.0/hat_0.1.0_darwin_x86_64.tar.gz"
+      sha256 "ff381255192d95c480db6a564eeb99e92f4c2ac6f52a9ab3d803a6317d25957d"
 
       def install
         bin.install "hat"
@@ -28,17 +28,17 @@ class Hat < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/Izzxt/hat/releases/download/v0.1.0/hat_0.1.0_linux_x86_64.tar.gz"
-      sha256 "d4eb35ce155a58447967474cc420615597cd1880258762745ad4dd9c9b79c691"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/Izzxt/hat/releases/download/v0.1.0/hat_0.1.0_linux_arm64.tar.gz"
+      sha256 "a3b8fa834c297d4ae77b1910c944f47b5466e5bd2ea1bc2859462053f454da3d"
 
       def install
         bin.install "hat"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Izzxt/hat/releases/download/v0.1.0/hat_0.1.0_linux_arm64.tar.gz"
-      sha256 "226a8d9091057cf5cd5acbe56d2a4060cedbae2f59df137cbff96c3286d40fc8"
+    if Hardware::CPU.intel?
+      url "https://github.com/Izzxt/hat/releases/download/v0.1.0/hat_0.1.0_linux_x86_64.tar.gz"
+      sha256 "b73c2c9e5a5c5e7d2ee619db88c7c08b100ac5b3f0129ec3c0dfdfda96398381"
 
       def install
         bin.install "hat"
