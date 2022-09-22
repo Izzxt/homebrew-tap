@@ -5,21 +5,21 @@
 class Hat < Formula
   desc "Hat is a CLI tool which provides the ability to download various files directly from Habbo."
   homepage ""
-  version "0.1.0"
+  version "0.1.1"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/Izzxt/hat/releases/download/v0.1.0/hat_0.1.0_darwin_arm64.tar.gz"
-      sha256 "d687a0182a6544823f742a4bc5b14a02c6ed8c09f26616ed7a589e512079118a"
+    if Hardware::CPU.intel?
+      url "https://github.com/Izzxt/hat/releases/download/v0.1.1/hat_0.1.1_darwin_x86_64.tar.gz"
+      sha256 "cd1ef33e9effa255c23e38b570688841e2393598864f1ff5cf01070ba4d55dee"
 
       def install
         bin.install "hat"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/Izzxt/hat/releases/download/v0.1.0/hat_0.1.0_darwin_x86_64.tar.gz"
-      sha256 "ff381255192d95c480db6a564eeb99e92f4c2ac6f52a9ab3d803a6317d25957d"
+    if Hardware::CPU.arm?
+      url "https://github.com/Izzxt/hat/releases/download/v0.1.1/hat_0.1.1_darwin_arm64.tar.gz"
+      sha256 "6fffb3f12611bdf36a9add91933cd8fd3314bd70a8503c38f25777ea4c523672"
 
       def install
         bin.install "hat"
@@ -29,16 +29,16 @@ class Hat < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Izzxt/hat/releases/download/v0.1.0/hat_0.1.0_linux_arm64.tar.gz"
-      sha256 "a3b8fa834c297d4ae77b1910c944f47b5466e5bd2ea1bc2859462053f454da3d"
+      url "https://github.com/Izzxt/hat/releases/download/v0.1.1/hat_0.1.1_linux_arm64.tar.gz"
+      sha256 "5b8cc48c79429f8ec3fc98b6c643b00fe51b8f3f6870de1618e6e665095f6717"
 
       def install
         bin.install "hat"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/Izzxt/hat/releases/download/v0.1.0/hat_0.1.0_linux_x86_64.tar.gz"
-      sha256 "b73c2c9e5a5c5e7d2ee619db88c7c08b100ac5b3f0129ec3c0dfdfda96398381"
+      url "https://github.com/Izzxt/hat/releases/download/v0.1.1/hat_0.1.1_linux_x86_64.tar.gz"
+      sha256 "aa2f4c5ee16cd8ef50eebd2c498c787317ea4c2ff03939b61c27e24045bb043f"
 
       def install
         bin.install "hat"
